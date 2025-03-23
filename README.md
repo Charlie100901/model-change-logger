@@ -1,74 +1,74 @@
 # Model Change Logger
-**Librería Laravel para registrar cambios (update y delete) en modelos.**  
-Registra en una tabla los campos modificados, su valor anterior, nuevo valor, el usuario responsable y la fecha del cambio.
+**Laravel library for recording changes (update and delete) in models.**  
+Records modified fields, their previous value, new value, the responsible user, and the date of the change in a database table.
 
 ---
 
-## 📦 Instalación
+## 📦 Installation
 
-Agrega el paquete a tu proyecto vía Composer:
+Add the package to your project via Composer:
 ```bash
 composer require carlosdev/model-change-logger
 ```
 
-Asegúrate de tener PHP 8.0+ y Laravel 10.
+Make sure you have PHP 8.0+ and Laravel 10.
 
-## 🔧 Configuración
+## 🔧 Configuration
 
-Publicar y correr las migraciones:
+Publish and run migrations:
 ```bash
 php artisan migrate
 ```
 
-Usar el trait en el modelo que desees auditar:
+Use the trait in the model you want to audit:
 ```php
 use CarlosDev\ModelChangeLogger\Traits\TracksChanges;
 
-class OfertaEmpresa extends Model
+class JobOffer extends Model
 {
     use TracksChanges;
 }
 ```
 
-(Opcional) Auditar solo campos específicos:
-Si deseas registrar únicamente ciertos campos, define la propiedad $auditFields en tu modelo:
+(Optional) Audit only specific fields:
+If you want to record only certain fields, define the $auditFields property in your model:
 ```php
-protected array $auditFields = ['estado_oferta_empresa_id', 'titulo'];
+protected array $auditFields = ['job_offer_status_id', 'title'];
 ```
 
-## 🧠 ¿Qué registra?
+## 🧠 What does it record?
 
-- Cambios en campos individuales al hacer update().
-- Eliminaciones (delete y forceDelete), guardando el evento pero sin campos específicos.
-- Usuario responsable (Auth::id()).
-- Modelo y ID afectados.
-- Fecha y hora del cambio.
+- Changes to individual fields when performing update().
+- Deletions (delete and forceDelete), saving the event but without specific fields.
+- Responsible user (Auth::id()).
+- Affected model and ID.
+- Date and time of the change.
 
-## 📄 Estructura de la tabla model_changes
+## 📄 Structure of the model_changes table
 
-| Campo | Descripción |
+| Field | Description |
 |-------|-------------|
-| model_type | Clase del modelo afectado (App\Models\X) |
-| model_id | ID del modelo modificado |
-| field | Campo que cambió |
-| old_value | Valor anterior del campo |
-| new_value | Nuevo valor del campo |
-| user_id | ID del usuario que realizó el cambio |
-| event | Tipo de evento (updated, deleted, etc.) |
-| changed_at | Fecha y hora del cambio |
+| model_type | Class of the affected model (App\Models\X) |
+| model_id | ID of the modified model |
+| field | Field that changed |
+| old_value | Previous value of the field |
+| new_value | New value of the field |
+| user_id | ID of the user who made the change |
+| event | Type of event (updated, deleted, etc.) |
+| changed_at | Date and time of the change |
 
 
-## ✅ Compatibilidad
+## ✅ Compatibility
 
 - PHP: >= 8.0
-- Laravel: ^10.0 || ^11.0
+- Laravel: ^10.0
 
-## 📬 Contribuciones
+## 📬 Contributions
 
-¡Sugerencias, mejoras y pull requests son bienvenidos! 🚀
+Suggestions, improvements, and pull requests are welcome! 🚀
 
-Este paquete está pensado para proyectos donde se requiere trazabilidad de cambios sin depender de paquetes complejos de auditoría.
+This package is designed for projects that require change traceability without depending on complex auditing packages.
 
-## 📄 Licencia
+## 📄 License
 
 MIT © CarlosDev
