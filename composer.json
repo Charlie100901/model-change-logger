@@ -1,0 +1,22 @@
+{
+    "name": "carlosdev/model-change-logger",
+    "description": "Librería Laravel para registrar cambios en modelos (update/delete)",
+    "type": "library",
+    "autoload": {
+      "psr-4": {
+        "CarlosDev\\ModelChangeLogger\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "CarlosDev\\ModelChangeLogger\\ModelChangeLoggerServiceProvider"
+        ]
+      }
+    },
+    "require": {
+      "php": "^8.0",
+      "illuminate/support": "^10.0"
+    }
+  }
+  
