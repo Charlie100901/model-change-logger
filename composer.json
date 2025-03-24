@@ -1,6 +1,6 @@
 {
     "name": "carlosdev/model-change-logger",
-    "description": "Librería Laravel para registrar cambios en modelos (update/delete)",
+    "description": "Laravel library for recording changes (update and delete) in models.",
     "type": "library",
     "autoload": {
       "psr-4": {
@@ -16,7 +16,6 @@
     },
     "require": {
       "php": "^8.0",
-      "illuminate/support": "^10.0"
+      "illuminate/support": "^10.0 || ^11.0 || ^12.0"
     }
   }
-  

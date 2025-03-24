@@ -22,7 +22,7 @@ trait TracksChanges
 
                 $oldValue = $original[$field] ?? null;
 
-                if ($oldValue != $newValue) {
+                if ((string) $oldValue !== (string) $newValue) {
                     ModelChange::create([
                         'model_type' => get_class($model),
                         'model_id'   => $model->getKey(),
