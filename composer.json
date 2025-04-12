@@ -1,6 +1,6 @@
 {
     "name": "carlosdev/model-change-logger",
-    "description": "Librería Laravel para registrar cambios en modelos (update/delete)",
+    "description": "Laravel package to automatically log changes (updates/deletes) made to Eloquent models.",
     "type": "library",
     "autoload": {
       "psr-4": {
