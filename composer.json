@@ -2,6 +2,7 @@
     "name": "carlosdev/model-change-logger",
     "description": "Laravel library for recording changes (update and delete) in models.",
     "type": "library",
+    "license": "MIT",
     "autoload": {
       "psr-4": {
         "CarlosDev\\ModelChangeLogger\\": "src/"
@@ -19,3 +20,4 @@
       "illuminate/support": "^10.0 || ^11.0 || ^12.0"
     }
   }
+  
