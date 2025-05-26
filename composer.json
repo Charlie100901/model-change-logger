@@ -2,6 +2,7 @@
     "name": "carlosdev/model-change-logger",
     "description": "Laravel package to automatically log changes (updates/deletes) made to Eloquent models.",
     "type": "library",
+    "license": "MIT",
     "autoload": {
       "psr-4": {
         "CarlosDev\\ModelChangeLogger\\": "src/"
